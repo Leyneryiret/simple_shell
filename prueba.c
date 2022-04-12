@@ -12,7 +12,9 @@ int main()
   while (1)
 	{
 	  write(1, "$ ", 2);
-	  if (getline(&input_buffer, &b_size, stdin) != 0)
+	  if (getline(&input_buffer, &b_size, stdin) == EOF)
+	    break;
+	  else
 	    {
 	    //Identificar el comando y los argumentos del comando//
 	  delim_args = " \t\r\n\v\f"; // los delimitadores
@@ -24,7 +26,6 @@ int main()
 	      i++;
 	    }
 	  command_argv[i] = NULL;
-	  break;
 	    }
 	}
   return (0);
