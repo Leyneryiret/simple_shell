@@ -12,5 +12,6 @@
 #include <sys/stat.h>
 
 int main();
+char *_strdup(char *s);
 
 #endif
