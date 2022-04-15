@@ -12,6 +12,8 @@
 #include <sys/stat.h>
 
 int main();
+char *path(char *command);
 char *_strdup(char *s);
+void _strcat(char *path, char *command, char *command_path);
 
 #endif

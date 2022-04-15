@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * _strdup - duplicates a string
  * @from: the string to be duplicated
@@ -11,7 +10,7 @@ char *_strdup(char *s)
   int i, len;
   char *dup_str;
 
-  len = _strlen(s) + 1;
+  len = strlen(s) + 1;
   dup_str = malloc(sizeof(int) * len);
   i = 0;
 
