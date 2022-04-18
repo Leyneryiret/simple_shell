@@ -2,25 +2,29 @@
 
 int main()
 {
-  char *input_buffer, *args, *delim_args = " \t\r\n\v\f", *command_argv[50];
-  char *ruta;
-  size_t b_size;
-  int i = 0;
-
-  b_size = 250;
-
-  input_buffer = malloc(sizeof(char) * b_size);
-  if (!input_buffer)
-    return 0;
+  char *delim_args = " \t\r\n\v\f", *command_argv[50];
+  char *linea = NULL, *args = NULL, *ruta = NULL, **env;
+  size_t len = 0;
+  int read = 0, i = 0, status;
+  pid_t child_pid;
+  
   while (1)
     {
-      write(1, "$ ", 2);
-      if (getline(&input_buffer, &b_size, stdin) == EOF) /* Obtener o analizar la entrada del usuario */
-	  break;
-      else
-	{
-	  /* Identificar el comando y los argumentos del comando */
-	  args = strtok(input_buffer, delim_args); /* almacena el token dentro del args */
+      write(STDIN_FILENO, "($) ", 4);
+      read = getline(&linea, &len, stdin);
+    if (read == EOF)
+      {
+	free(linea), write(STDIN_FILENO, "\n", 1);
+	return (0);
+      }
+    else if (_strncmp(linea, "exit\n", 4) == 0)
+      {
+	free(linea);
+	return (0);
+      }
+    else
+      {
+	args = strtok(linea, delim_args);
 	  while (args)
 	    {
 	      command_argv[i] = args; /* almacena el token en command_argv */
@@ -29,10 +33,22 @@ int main()
 	    }
 	  command_argv[i] = NULL;/* lo termino con NULL */
 	  ruta = path(command_argv[0]);
-	  printf ("%s\n", ruta);
-	}
-      free(ruta);
+
+	  get_each_command_argv(command_argv, linea);
+	  child_pid = fork();
+	  if (child_pid == -1)
+	    return (0);
+	  if (child_pid == 0)
+	    {
+	      if (execve(ruta, command_argv, env) == -1)
+		{
+		  free(ruta);
+		  return (0);
+		}
+	    }
+	  else
+	    wait(&status);
+      }
     }
-  free(input_buffer);
   return (0);
 }

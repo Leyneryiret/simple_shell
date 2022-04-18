@@ -7,13 +7,13 @@
  */
 char *_strdup(char *s)
 {
-  int i, len;
-  char *dup_str;
+  int i = 0, len = 0;
+  char *dup_str = NULL;
 
-  len = strlen(s) + 1;
+  len = _strlen(s) + 1;
+
   dup_str = malloc(sizeof(int) * len);
-  i = 0;
-
+  
   while (*(s + i) != '\0')
     {
       *(dup_str + i) = *(s + i);
