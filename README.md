@@ -26,9 +26,6 @@ This shell supports a variety of commands:
 
 `exit` - exit the shell
 
-
-### Compilation
------
 ### Files
 -----
 Brief description of every file in this repository. Subject to change.
