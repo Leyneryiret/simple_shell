@@ -33,6 +33,9 @@ if (stat_f == 0)
 free(path_dup);
 return (command_path); /* returns the concatenated string if found */
 }
+ else
+   {
+  printf ("No such file or directory");
 j++;
 }
 free(path_dup);
