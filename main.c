@@ -28,7 +28,10 @@ int main(void)
 			else
 				ruta = path(command_argv[0]);
 			if (!ruta)
+			{
+				printf("./shell: No such file or directory\n");
 				continue;
+			}
 			child_pid = fork();
 			if (child_pid == -1)
 			{
