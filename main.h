@@ -12,7 +12,7 @@
 #include <string.h>
 #include <errno.h>
 
-int main();
+int main(void);
 int _strncmp(const char *s1, const char *s2, size_t n);
 char *path(char *command);
 char *_strdup(char *s);
