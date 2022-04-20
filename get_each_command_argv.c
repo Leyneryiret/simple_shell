@@ -9,13 +9,10 @@
  */
 void get_each_command_argv(char **command_argv, char *input_buffer)
 {
-  char *args, *delim_args;
-  int i;
+  char *args = NULL, *delim_args = " \t\r\n\v\f";
+  int i = 0;
 
-  delim_args = " \t\r\n\v\f";
   args = strtok(input_buffer, delim_args);
-
-  i = 0;
   while (args)
     {
       command_argv[i] = args;

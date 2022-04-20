@@ -6,10 +6,9 @@
  */
 int _strlen(char *string)
 {
-  int counter = 0;
+int counter = 0;
 
-  while (*(string + counter))
-    counter++;
-
-  return (counter);
+while (*(string + counter))
+counter++;
+return (counter);
 }

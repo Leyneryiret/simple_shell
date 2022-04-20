@@ -10,24 +10,24 @@
  */
 void _strcat(char *path, char *command, char *command_path)
 {
-  int i, j;
+int i, j;
 
-  i = 0;
-  j = 0;
+i = 0;
+j = 0;
 
-  while (*(path + i) != '\0')
-    {
-      *(command_path + i) = *(path + i);
-      i++;
-    }
-  *(command_path + i) = '/';
-  i++;
+while (*(path + i) != '\0')
+{
+*(command_path + i) = *(path + i);
+i++;
+}
+*(command_path + i) = '/';
+i++;
 
-  while (*(command + j) != '\0')
-    {
-      *(command_path + i) = *(command + j);
-      i++;
-      j++;
-    }
-  *(command_path + i) = '\0';
+while (*(command + j) != '\0')
+{
+*(command_path + i) = *(command + j);
+i++;
+j++;
+}
+*(command_path + i) = '\0';
 }
