@@ -5,8 +5,7 @@
  */
 int main(void)
 {
-	char *command_argv[50], **env = NULL;
-	char *linea = NULL, *ruta = NULL;
+	char *command_argv[50], **env = NULL, *linea = NULL, *ruta = NULL;
 	size_t len = 0;
 	int read = 0, status = 0;
 	pid_t child_pid;
@@ -28,10 +27,7 @@ int main(void)
 			else
 				ruta = path(command_argv[0]);
 			if (!ruta)
-			{
-				printf("./shell: No such file or directory\n");
 				continue;
-			}
 			child_pid = fork();
 			if (child_pid == -1)
 			{
