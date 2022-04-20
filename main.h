@@ -19,6 +19,6 @@ char *_strdup(char *s);
 int _strlen(char *string);
 void _strcat(char *path, char *command, char *command_path);
 void get_each_command_argv(char **command_argv, char *input_buffer);
-
+void print_env(char **env);
 
 #endif
