@@ -20,19 +20,11 @@ When using this shell, the syntax for running any command follows the familiar s
 -----
 This shell supports a variety of commands:
 
-`alias` - create or list an alias
-
 `cd` - change directory
 
 `env` - list the current environment variables
 
 `exit` - exit the shell
-
-`history` - display the command history for the current shell session
-
-`setenv` - sets an environment variable
-
-`unsetenv` - unsets an environment variable
 
 ```
 MANDALORIAN$ help <builtin command>
