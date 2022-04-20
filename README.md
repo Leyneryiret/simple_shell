@@ -26,9 +26,6 @@ This shell supports a variety of commands:
 
 `exit` - exit the shell
 
-```
-MANDALORIAN$ help <builtin command>
-```
 
 ### Compilation
 -----
