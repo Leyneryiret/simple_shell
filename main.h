@@ -14,7 +14,8 @@
 
 int main(void);
 int _strncmp(const char *s1, const char *s2, size_t n);
-char *path(char *command);
+void _path(char **path, char *path_dup);
+char *_ruta(char *command);
 char *_strdup(char *s);
 int _strlen(char *string);
 void _strcat(char *path, char *command, char *command_path);

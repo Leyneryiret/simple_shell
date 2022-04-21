@@ -3,8 +3,7 @@
  * print_env - print variable global envirionment
  * @env: variable global envirionment system
  * Return: estatus_exit value;
- **/
-
+ */
 void print_env(char **env)
 {
 	int i = 0;
