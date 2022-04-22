@@ -5,12 +5,8 @@
 #include <sys/types.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <sys/types.h>
-#include <sys/wait.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <string.h>
-#include <errno.h>
+#include <sys/wait.h>/*para usar wait*/
+#include <string.h> /*para fncion strtok*/
 
 int main(void);
 int _strncmp(const char *s1, const char *s2, size_t n);

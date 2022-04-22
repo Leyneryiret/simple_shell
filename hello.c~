@@ -1,0 +1,7 @@
+#include <stdio.h>
+
+int main()
+{
+  printf ("hols mundo\n");
+  retrn 0;
+}

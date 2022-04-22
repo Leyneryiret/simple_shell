@@ -23,31 +23,26 @@ int main(void)
 		else if (read > 1)
 		{
 			get_each_command_argv(command_argv, linea);
-			if (access(command_argv[0], X_OK) == 0)
-				ruta = _strdup(command_argv[0]);
-			else
-				ruta = _ruta(command_argv[0]);
+			ruta = _ruta(command_argv[0]);
 			if (!ruta)
 				continue;
-			child_pid = fork();
-			if (child_pid == -1)
-			{
-				free(ruta), free(linea);
-				return (0);
-			}
-			if (child_pid == 0)
-			{
-				if (execve(ruta, command_argv, env) == -1)
-				{
-					free(ruta), free(linea);
-					return (0);
-				}
-			}
 			else
 			{
-			free(ruta), wait(&status);
+				child_pid = fork();
+				if (child_pid == -1)
+					return (0);
+				if (child_pid == 0)
+				{
+					if (execve(ruta, command_argv, env) == -1)
+						return (0);
+				}
+				else
+				{
+					free(ruta), wait(&status);
+				}
 			}
 		}
 	}
+	free(linea);
 	return (0);
 }
