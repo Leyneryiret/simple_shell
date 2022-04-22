@@ -1,8 +1,7 @@
 #ifndef _MAIN_H_
 #define _MAIN_H_
-#define _GNU_SOURCE
+
 #include <stdio.h>
-#include <sys/types.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <sys/wait.h>/*para usar wait*/
